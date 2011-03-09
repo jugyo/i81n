@@ -7,6 +7,9 @@ It aims that make I18n easy to use.
 
 It extends the I18n::Backend::Simple.
 
+I18n の YAML ファイルを編集するのって面倒ですよね！
+I81n を使うと（とりあえずは） YAML ファイルに翻訳テキストを書かなくても良くなります！
+
 Usage
 ----
 
