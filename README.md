@@ -3,30 +3,51 @@ i81n
 
 I81n is 'Internationalizaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaation'.
 
-It aims that make I18n easy to use.
-
-It extends the I18n::Backend::Simple.
-
 I18n の YAML ファイルを編集するのって面倒ですよね！
 I81n を使うと（とりあえずは） YAML ファイルに翻訳テキストを書かなくても良くなります！
 
-Usage
+インストール
 ----
 
-en.yml
+次のようにして gem コマンドでインストールすることができます。
+
+    gem install i81n
+
+Rails をお使いの際は Gemfile に以下を追記して bundle install を実行してください。
+
+    gem 'i81n'
+
+使い方
+----
+
+Rails のビューにメッセージを埋め込む場合、こんな感じで書けます。
+
+    <%= t('こんにちは！') %>
+
+サービスを英語対応させたくなった時に翻訳ファイル（en.yml）を書けばいいのです。
+
+### もうちょっと詳しく
+
+以下のような YAML ファイル（ja.yml）があった場合、
 
     ---
-    en:
-      foo: FOO
+    ja:
+      フー: フー
 
-example:
+このような出力になります。
 
     require 'i81n'
-    I18n.t('foo')                  #=> 'FOO'
-    I18n.t('bar')                  #=> 'bar'      (as default text)
-    I18n.t('%{n} times', :n => 10) #=> '10 times' (you can embed values into the default text)
+    I18n.config.locale = :ja
+    I18n.t('foo') #=> 'フー'
+    I18n.t('バー') #=> 'バー'
+    I18n.t('%{n}個', :n => 10) #=> '10個'
 
-Copyright
+詳細
+----
+
+I18n は I18n::Backend::Simple を拡張することによって上記の機能を実現しています。
+
+コピーライト
 ----
 
 Copyright (c) 2011 jugyo. See LICENSE.txt for further details.
