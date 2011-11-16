@@ -17,6 +17,10 @@ Rails をお使いの際は Gemfile に以下を追記して bundle install を�
 
     gem 'i81n'
 
+I18n.backend を以下のように設定してください（Rails では config/initializers/i81n.rb 等に書いておくとよいでしょう）。
+
+    I18n.backend = I18n::Backend::I81n.new
+
 使い方
 ----
 
@@ -41,6 +45,7 @@ Rails のビューにメッセージを埋め込む場合、こんな感じで�
 このような出力になります。
 
     require 'i81n'
+    I18n.backend = I18n::Backend::I81n.new
     I18n.config.locale = :ja
     I18n.t('foo') #=> 'フー'
     I18n.t('バー') #=> 'バー'
