@@ -3,6 +3,7 @@ require 'helper'
 class TestI81n < Test::Unit::TestCase
   context '' do
     setup do
+      I18n.backend = I18n::Backend::I81n.new
       I18n.config.load_path << File.expand_path('../fixtures/en.yml', __FILE__)
     end
 
