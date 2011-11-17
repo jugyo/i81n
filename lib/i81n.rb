@@ -4,7 +4,7 @@ class I18n::Backend::I81n < I18n::Backend::Simple
 
   def initialize(ignore_pattern = nil)
     @ignore_pattern = ignore_pattern
-    super
+    super()
   end
 
   def lookup(locale, key, scope = [], options = {})
