@@ -1,3 +1,9 @@
+PATH
+  remote: .
+  specs:
+    i81n (0.2.1)
+      i18n
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -14,7 +20,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bundler (~> 1.0.0)
-  i18n
-  jeweler (~> 1.5.2)
+  bundler
+  i81n!
+  jeweler
   shoulda
