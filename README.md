@@ -19,7 +19,7 @@ Rails をお使いの際は Gemfile に以下を追記して bundle install を�
 
 I18n.backend を以下のように設定してください（Rails では config/initializers/i81n.rb 等に書いておくとよいでしょう）。
 
-    I18n.backend = I18n::Backend::I81n.new
+    I18n.backend = I18n::Backend::I81n.new(/^(helpers\.label|activerecord\.attributes)/)
 
 使い方
 ----
