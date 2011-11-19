@@ -8,10 +8,11 @@ class I18n::Backend::I81n < I18n::Backend::Simple
   end
 
   def lookup(locale, key, scope = [], options = {})
-    if ignore && ignore =~ key.to_s
+    key_str = key.to_s
+    if ignore && ignore =~ key_str
       super
     else
-      super || key.to_s
+      super || key_str
     end
   end
 end
