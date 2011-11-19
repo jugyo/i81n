@@ -3,7 +3,7 @@ require 'helper'
 class TestI81n < Test::Unit::TestCase
   context '' do
     setup do
-      I18n.backend = I18n::Backend::I81n.new
+      I18n.backend = I18n::Backend::I81n.new(:ignore => /^aaa\.bbb/)
       I18n.config.load_path << File.expand_path('../fixtures/en.yml', __FILE__)
     end
 
@@ -25,6 +25,10 @@ class TestI81n < Test::Unit::TestCase
 
     should "get the translation thet is not stored and have embeded string" do
       assert_equal('10 times', I18n.t('%{n} times', :n => 10))
+    end
+
+    should "ignore by the regexp" do
+      assert_equal('translation missing: en.aaa.bbb', I18n.t('aaa.bbb'))
     end
   end
 end
