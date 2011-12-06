@@ -34,5 +34,9 @@ class TestI81n < Test::Unit::TestCase
     should "ignore by specify the option" do
       assert_equal('translation missing: en.ccc.ddd', I18n.t('ccc.ddd', :i81n => false))
     end
+
+    should ":default option works" do
+      assert_equal('foo', I18n.t('ccc.ddd', :default => 'foo'))
+    end
   end
 end
