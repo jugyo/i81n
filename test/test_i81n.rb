@@ -30,5 +30,9 @@ class TestI81n < Test::Unit::TestCase
     should "ignore by the regexp" do
       assert_equal('translation missing: en.aaa.bbb', I18n.t('aaa.bbb'))
     end
+
+    should "ignore by specify the option" do
+      assert_equal('translation missing: en.ccc.ddd', I18n.t('ccc.ddd', :i81n => false))
+    end
   end
 end

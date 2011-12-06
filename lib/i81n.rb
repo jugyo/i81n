@@ -8,6 +8,8 @@ class I18n::Backend::I81n < I18n::Backend::Simple
   end
 
   def lookup(locale, key, scope = [], options = {})
+    return super if options.delete(:i81n) == false
+
     key_str = key.to_s
     if ignore && ignore =~ key_str
       super
