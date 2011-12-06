@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "i81n"
-  s.version     = "0.3.0"
+  s.version     = "0.3.1"
   s.authors     = ["jugyo"]
   s.email       = ["jugyo.org@gmail.com"]
   s.homepage    = "https://github.com/jugyo/i81n"
